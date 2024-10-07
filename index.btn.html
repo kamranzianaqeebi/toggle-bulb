@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Mode</title>
+    <style>
+        #togglebtn {
+            background-color: green;
+            padding: 15px;
+        }
+
+        #center {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            height: 400px;
+        }
+
+        .centere {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 20px;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="center" src="img/bulb off.jpg" alt="dark-mode">
+    <button class="centere" id="togglebtn">Turn On</button>
+    <script>
+        let togglebtn = document.getElementById('togglebtn');
+        let bulbimg = document.getElementById('center');
+        let isBulbOn = false; 
+        togglebtn.addEventListener('click', toggling);
+        function toggling() {
+            if (!isBulbOn) {
+                isBulbOn = true;
+                togglebtn.textContent = "Turn Off"; 
+                bulbimg.src = "img/bulb on.jpg";
+            } else {
+                isBulbOn = false;
+                togglebtn.textContent = "Turn On";
+                bulbimg.src = "img/bulb off.jpg"; 
+            }
+        }
+    </script>
+</body>
+
+</html>
